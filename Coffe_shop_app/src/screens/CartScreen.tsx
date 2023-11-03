@@ -30,6 +30,7 @@ const CartScreen = ({navigation, route}: any) => {
   const buttonPressHandler = () => {
     navigation.push('Payment', {amount: CartPrice});
   };
+  console.log(CartPrice);
 
   const incrementCartItemQuantityHandler = (id: string, size: string) => {
     incrementCartItemQuantity(id, size);

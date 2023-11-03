@@ -28,7 +28,6 @@ interface CartItemProps {
   incrementCartItemQuantityHandler: any;
   decrementCartItemQuantityHandler: any;
 }
-
 const CartItem: React.FC<CartItemProps> = ({
   id,
   name,
@@ -40,6 +39,7 @@ const CartItem: React.FC<CartItemProps> = ({
   incrementCartItemQuantityHandler,
   decrementCartItemQuantityHandler,
 }) => {
+  console.log(prices);
   return (
     <View>
       {prices.length != 1 ? (
@@ -76,7 +76,7 @@ const CartItem: React.FC<CartItemProps> = ({
                           type == 'Bean' ? FONTSIZE.size_12 : FONTSIZE.size_16,
                       },
                     ]}>
-                    {data.size}
+                    {data?.size}
                   </Text>
                 </View>
                 <Text style={styles.SizeCurrency}>

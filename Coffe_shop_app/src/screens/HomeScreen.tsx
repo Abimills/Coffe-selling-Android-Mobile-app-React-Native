@@ -44,6 +44,9 @@ const HomeScreen = ({navigation}: any) => {
     index: 0,
     category: categories[0],
   });
+  const addToCart = useStore((state: any) => state.addToCart);
+  const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
+
   const ListRef: any = useRef<FlatList>();
   const [sortedCoffee, setSortedCoffee] = useState(
     SortData(categoryIndex?.category, CoffeeList),
@@ -71,6 +74,34 @@ const HomeScreen = ({navigation}: any) => {
     setCategoryIndex({index: 0, category: categories[0]});
     setSortedCoffee([...CoffeeList]);
     setSearchText('');
+  };
+  const addToCartHandler = ({
+    imagelink_square,
+    type,
+    id,
+    name,
+    index,
+    roasted,
+    special_ingredient,
+    prices,
+  }: any) => {
+    addToCart({
+      imagelink_square,
+      type,
+      id,
+      name,
+      index,
+      roasted,
+      special_ingredient,
+      prices,
+      // : [{...price, quantity: 1}],
+    });
+    calculateCartPrice();
+    ToastAndroid.showWithGravity(
+      `${name} is added to Cart`,
+      ToastAndroid.SHORT,
+      ToastAndroid.CENTER,
+    );
   };
   return (
     <View style={styles.ScreenContainer}>
@@ -181,11 +212,11 @@ const HomeScreen = ({navigation}: any) => {
                   name={item.name}
                   index={item.index}
                   type={item.name}
-                  rosted={item.rosted}
+                  roasted={item.roasted}
                   special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
                   price={item.prices[2]}
-                  buttonPressHandler={() => {}}
+                  buttonPressHandler={addToCartHandler}
                   imagelink_square={item.imagelink_square}
                 />
               </TouchableOpacity>
@@ -218,11 +249,11 @@ const HomeScreen = ({navigation}: any) => {
                   name={item.name}
                   index={item.index}
                   type={item.name}
-                  rosted={item.rosted}
+                  roasted={item.roasted}
                   special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
                   price={item.prices[2]}
-                  buttonPressHandler={() => {}}
+                  buttonPressHandler={addToCartHandler}
                   imagelink_square={item.imagelink_square}
                 />
               </TouchableOpacity>

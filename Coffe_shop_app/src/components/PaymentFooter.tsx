@@ -14,7 +14,7 @@ interface PriceProps {
 }
 
 interface PaymentFooterProps {
-  price: PriceProps;
+  price: any;
   buttonPressHandler: any;
   buttonTitle: string;
 }
@@ -24,6 +24,7 @@ const PaymentFooter: React.FC<PaymentFooterProps> = ({
   buttonPressHandler,
   buttonTitle,
 }) => {
+  console.log(price);
   return (
     <View style={styles.PriceFooter}>
       <View style={styles.PriceContainer}>

@@ -61,12 +61,13 @@ export const useStore = create(
                 tempprice =
                   tempprice +
                   parseFloat(state.CartList[i].prices[j].price) *
-                    state.CartList[i].prices[j].quantity;
+                    state.CartList[i].prices[j]?.quantity;
               }
               state.CartList[i].ItemPrice = tempprice.toFixed(2).toString();
               totalprice = totalprice + tempprice;
             }
             state.CartPrice = totalprice.toFixed(2).toString();
+            state.CartPrice = 100;
           }),
         ),
       addToFavoriteList: (type: string, id: string) =>
