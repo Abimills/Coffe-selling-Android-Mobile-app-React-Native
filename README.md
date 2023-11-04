@@ -7,8 +7,14 @@ This a react native mobile android app , created using react native cli  with a 
 This app is not deployed to Google Play Store, 
 
 but it can be opend in a Terminal : instructions -
+
+
  ====> cd Coffee-Shop-Mobile-App
 
- ===> npm install 
+
+
+ ===> npm install
+
+ 
  ==> npm run android
  
