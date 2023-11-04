@@ -29,6 +29,7 @@ const TabNavigator = () => {
       }}>
       <Tab.Screen
         name="Home"
+        component={HomeScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
             <CustomIcon
@@ -39,10 +40,10 @@ const TabNavigator = () => {
               }
             />
           ),
-        }}
-        component={HomeScreen}></Tab.Screen>
+        }}></Tab.Screen>
       <Tab.Screen
         name="Cart"
+        component={CartScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
             <CustomIcon
@@ -53,10 +54,10 @@ const TabNavigator = () => {
               }
             />
           ),
-        }}
-        component={CartScreen}></Tab.Screen>
+        }}></Tab.Screen>
       <Tab.Screen
         name="Favorite"
+        component={FavoritesScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
             <CustomIcon
@@ -67,10 +68,10 @@ const TabNavigator = () => {
               }
             />
           ),
-        }}
-        component={FavoritesScreen}></Tab.Screen>
+        }}></Tab.Screen>
       <Tab.Screen
         name="History"
+        component={OrderHistoryScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
             <CustomIcon
@@ -81,83 +82,9 @@ const TabNavigator = () => {
               }
             />
           ),
-        }}
-        component={OrderHistoryScreen}></Tab.Screen>
+        }}></Tab.Screen>
     </Tab.Navigator>
   );
-  // return (
-  //   <Tab.Navigator
-  //     screenOptions={{
-  //       tabBarHideOnKeyboard: true,
-  //       headerShown: false,
-  //       tabBarShowLabel: false,
-  //       tabBarStyle: styles.tabBarStyle,
-  //       tabBarBackground: () => (
-  //         <BlurView
-  //           overlayColor=""
-  //           blurAmount={15}
-  //           style={styles.BlurViewStyles}
-  //         />
-  //       ),
-  //     }}>
-  //     <Tab.Screen
-  //       name="Home"
-  //       component={HomeScreen}
-  //       options={{
-  //         tabBarIcon: ({focused, color, size}) => (
-  //           <CustomIcon
-  //             name="home"
-  //             size={25}
-  //             color={
-  //               focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
-  //             }
-  //           />
-  //         ),
-  //       }}></Tab.Screen>
-  //     <Tab.Screen
-  //       name="Cart"
-  //       component={CartScreen}
-  //       options={{
-  //         tabBarIcon: ({focused, color, size}) => (
-  //           <CustomIcon
-  //             name="cart"
-  //             size={25}
-  //             color={
-  //               focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
-  //             }
-  //           />
-  //         ),
-  //       }}></Tab.Screen>
-  //     <Tab.Screen
-  //       name="Favorite"
-  //       component={FavoritesScreen}
-  //       options={{
-  //         tabBarIcon: ({focused, color, size}) => (
-  //           <CustomIcon
-  //             name="like"
-  //             size={25}
-  //             color={
-  //               focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
-  //             }
-  //           />
-  //         ),
-  //       }}></Tab.Screen>
-  //     <Tab.Screen
-  //       name="History"
-  //       component={OrderHistoryScreen}
-  //       options={{
-  //         tabBarIcon: ({focused, color, size}) => (
-  //           <CustomIcon
-  //             name="bell"
-  //             size={25}
-  //             color={
-  //               focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
-  //             }
-  //           />
-  //         ),
-  //       }}></Tab.Screen>
-  //   </Tab.Navigator>
-  // );
 };
 
 const styles = StyleSheet.create({

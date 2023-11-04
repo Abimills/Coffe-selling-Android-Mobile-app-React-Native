@@ -4,13 +4,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import {COLORS, SPACING} from '../theme/theme';
 import CustomIcon from './CustomIcon';
 
-interface GradientBgIconProps {
+interface GradientBGIconProps {
   name: string;
   color: string;
   size: number;
 }
 
-const GradientBGIcon: React.FC<GradientBgIconProps> = ({size, color, name}) => {
+const GradientBGIcon: React.FC<GradientBGIconProps> = ({name, color, size}) => {
   return (
     <View style={styles.Container}>
       <LinearGradient

@@ -37,7 +37,7 @@ const FavoritesScreen = ({navigation}: any) => {
             <HeaderBar title="Favourites" />
 
             {FavoritesList.length == 0 ? (
-              <EmptyListAnimation title={'Empty Favorites'} />
+              <EmptyListAnimation title={'No Favourites'} />
             ) : (
               <View style={styles.ListItemContainer}>
                 {FavoritesList.map((data: any) => (

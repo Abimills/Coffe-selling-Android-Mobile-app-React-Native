@@ -16,7 +16,6 @@ const HeaderBar: React.FC<HeaderBarProps> = ({title}) => {
         color={COLORS.primaryLightGreyHex}
         size={FONTSIZE.size_16}
       />
-
       <Text style={styles.HeaderText}>{title}</Text>
       <ProfilePic />
     </View>
@@ -36,4 +35,5 @@ const styles = StyleSheet.create({
     color: COLORS.primaryWhiteHex,
   },
 });
+
 export default HeaderBar;

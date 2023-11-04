@@ -20,29 +20,31 @@ import CustomIcon from './CustomIcon';
 import BGIcon from './BGIcon';
 
 const CARD_WIDTH = Dimensions.get('window').width * 0.32;
+
 interface CoffeeCardProps {
-  name: string;
   id: string;
   index: number;
   type: string;
   roasted: string;
+  imagelink_square: ImageProps;
+  name: string;
   special_ingredient: string;
   average_rating: number;
   price: any;
   buttonPressHandler: any;
-  imagelink_square: ImageProps;
 }
+
 const CoffeeCard: React.FC<CoffeeCardProps> = ({
   id,
-  name,
   index,
   type,
   roasted,
+  imagelink_square,
+  name,
   special_ingredient,
   average_rating,
   price,
   buttonPressHandler,
-  imagelink_square,
 }) => {
   return (
     <LinearGradient
@@ -58,7 +60,8 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
           <CustomIcon
             name={'star'}
             color={COLORS.primaryOrangeHex}
-            size={FONTSIZE.size_18}></CustomIcon>
+            size={FONTSIZE.size_16}
+          />
           <Text style={styles.CardRatingText}>{average_rating}</Text>
         </View>
       </ImageBackground>
@@ -66,18 +69,18 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
       <Text style={styles.CardSubtitle}>{special_ingredient}</Text>
       <View style={styles.CardFooterRow}>
         <Text style={styles.CardPriceCurrency}>
-          $<Text style={styles.CardPrice}>{price.price}</Text>
+          $ <Text style={styles.CardPrice}>{price.price}</Text>
         </Text>
         <TouchableOpacity
           onPress={() => {
             buttonPressHandler({
               id,
-              name,
               index,
               type,
               roasted,
+              imagelink_square,
+              name,
               special_ingredient,
-              average_rating,
               prices: [{...price, quantity: 1}],
             });
           }}>
